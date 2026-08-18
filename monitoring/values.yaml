@@ -49,3 +49,6 @@ nodeExporter:
 
 alertmanager:
   enabled: true
+
+crds:
+  enabled: false
