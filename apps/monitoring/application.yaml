@@ -37,7 +37,7 @@ spec:
       ref: values
 
   destination:
-    name: kind-gitops2
+    name: kind-gitops
     namespace: monitoring
 
   syncPolicy:
