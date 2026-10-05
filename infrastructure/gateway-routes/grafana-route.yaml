@@ -7,6 +7,7 @@ spec:
   parentRefs:
     - name: web
       namespace: default
+      sectionName: http
   hostnames:
     - grafana.local
   rules:
