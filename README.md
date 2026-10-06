@@ -28,3 +28,13 @@ kubectl rollout restart deployment argocd-server -n argocd
 kubectl -n argocd get secret argocd-initial-admin-secret \
   -o jsonpath='{.data.password}' | base64 --decode
 echo
+
+## Criar senha Grafana
+kubectl create namespace monitoring
+kubectl -n monitoring create secret generic grafana-admin \
+  --from-literal=admin-user=admin \
+  --from-literal=admin-password='SENHA_FORTE'
+
+## Adicionar label gateway-access=true
+kubectl label namespace argocd gateway-access=true --overwrite
+kubectl label namespace monitoring gateway-access=true --overwrite
